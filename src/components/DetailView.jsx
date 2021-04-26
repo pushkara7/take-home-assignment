@@ -16,11 +16,10 @@ const DetailView = () => {
             features,
         },
         visitedLinksId,
-        error,
     } = jsonData;
 
     const dispatch = useDispatch();
-    const { sortedList, findSortDirection } = useSortData(features);
+    const { sortedList, sortByKey } = useSortData(features);
 
     const onLinkClick = (id) => {
         dispatch(setVisitedLinksId(id));
@@ -36,7 +35,6 @@ const DetailView = () => {
 
     return (
         <>
-            {" "}
             <h3 className="home-title">{title}</h3>
             <table className="view-table">
                 <thead>
@@ -44,19 +42,19 @@ const DetailView = () => {
                     <th>
                         <SortButton
                             label="Title"
-                            onSort={() => findSortDirection("title")}
+                            onSort={() => sortByKey("title")}
                         />
                     </th>
                     <th>
                         <SortButton
                             label="Magnitude"
-                            onSort={() => findSortDirection("mag")}
+                            onSort={() => sortByKey("mag")}
                         />
                     </th>
                     <th>
                         <SortButton
                             label="Time"
-                            onSort={() => findSortDirection("time")}
+                            onSort={() => sortByKey("time")}
                         />
                     </th>
                 </tr>
@@ -65,7 +63,6 @@ const DetailView = () => {
                 {sortedList.map((feature) => (
                     <tr key={feature.id}>
                         <td className="view-title">
-                            {" "}
                             <Link
                                 to={{
                                     pathname: "/detail",
@@ -74,7 +71,7 @@ const DetailView = () => {
                                 className={getClassName(feature.id)}
                                 onClick={() => onLinkClick(feature.id)}
                             >
-                                {feature.properties.title}{" "}
+                                {feature.properties.title}
                             </Link>
                         </td>
                         <td className="view-mag">{feature.properties.mag}</td>

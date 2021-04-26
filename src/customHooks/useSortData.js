@@ -6,7 +6,7 @@ export const useSortData = (list) => {
 
     const { key, direction } = columnToSort;
 
-    const findSortDirection = (keyProp) => {
+    const sortByKey = (keyProp) => {
         let sortOrder = 1;
         if (key === keyProp && direction === 1) {
             sortOrder = -1;
@@ -30,5 +30,5 @@ export const useSortData = (list) => {
         return listToSort;
     }, [list, columnToSort]);
 
-    return { sortedList, findSortDirection };
+    return { sortedList, sortByKey };
 };

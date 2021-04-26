@@ -5,8 +5,7 @@ import "../styles/DetailView.css";
 const SortButton = ({ onSort, label }) => {
     return (
         <button type="button" onClick={onSort} className="button">
-            {" "}
-            {label}{" "}
+            {label}
         </button>
     );
 };
