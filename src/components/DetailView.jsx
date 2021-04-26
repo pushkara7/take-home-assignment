@@ -71,7 +71,7 @@ const DetailView = () => {
                                 className={getClassName(feature.id)}
                                 onClick={() => onLinkClick(feature.id)}
                             >
-                                {feature.properties.title}
+                                {feature.properties.place}
                             </Link>
                         </td>
                         <td className="view-mag">{feature.properties.mag}</td>
