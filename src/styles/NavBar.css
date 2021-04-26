@@ -1,0 +1,39 @@
+#nav {
+    display: flex;
+    padding: 1rem;
+    list-style: none;
+    background: #ededed;
+    margin: 0;
+}
+
+.logo{
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+}
+.logo-image{
+    max-height: 2rem;
+}
+.profile-link{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+.profile-link a{
+    color: #6600cc !important;
+    text-decoration: underline !important;
+}
+.page-title{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #777777;
+}
+
+.error-message{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
