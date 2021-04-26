@@ -15,9 +15,9 @@ export const useSortData = (list) => {
     };
 
     const sortedList = React.useMemo(() => {
-        const sortedList = [...list];
+        const listToSort = [...list];
         if (key) {
-            sortedList.sort((a, b) => {
+            listToSort.sort((a, b) => {
                 if (a.properties[key] > b.properties[key]) {
                     return direction === 1 ? 1 : -1;
                 }
@@ -27,7 +27,7 @@ export const useSortData = (list) => {
                 return 0;
             });
         }
-        return sortedList;
+        return listToSort;
     }, [list, columnToSort]);
 
     return { sortedList, findSortDirection };
